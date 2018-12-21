@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t,x,c,i,ans;
+	string n;
+	stack<int>s;
+	cin>>t;
+	while(t--)
+	{   
+	    ans=0;
+	    c=0;
+	    cin>>n;
+	    i=0;
+	    s.push(-1);
+	    while(i<n.length())
+	    {
+	        x=n[i];
+	        
+	        if(x=='(')
+	        s.push(i);
+	        else{
+	            s.pop();
+	            if(s.empty())
+	            {
+	                s.push(i);
+	            }
+	            else 
+	            {
+	                
+	                ans=max(ans,i-s.top());
+	            }
+	        }
+	        i++;
+	    }
+	    
+	    cout<<ans<<endl;
+	    
+	    while(!s.empty())
+	    s.pop();
+	}
+	return 0;
+}
