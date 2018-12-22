@@ -1,0 +1,30 @@
+using namespace std;
+
+int main() {
+    int t,n,a[1000006],i;
+    map<int,int>m;
+    map<int,int>::iterator it;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for(i=0;i<(2*n+2);i++)
+        {
+            cin>>a[i];
+            m[a[i]]++;
+            
+            
+        }
+        for(it=m.begin();it!=m.end();it++)
+        {
+            
+            if(it->second%2==1)
+            cout<<it->first<<" ";
+            
+        }
+        cout<<endl;
+        m.clear();
+    }
+	
+	return 0;
+}
